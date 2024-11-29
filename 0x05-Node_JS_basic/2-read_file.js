@@ -7,7 +7,9 @@ const countStudents = (pth) => {
       .trim()
       .split('\n')
       .slice(1)
-      .map((line) => line.split(','));
+      .map((line) => line.split(','))
+      .filter((student) => student.length === 4);
+    console.log(`Number of students: ${students.length}`);
     const fields = students.reduce((acc, student) => {
       const field = student[3];
       if (!acc[field]) acc[field] = [];
@@ -25,4 +27,5 @@ const countStudents = (pth) => {
     throw new Error('Cannot load the database');
   }
 };
+
 module.exports = countStudents;
