@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 
 async function countStudents(pth) {
-  return await fs
+  return fs
     .readFile(pth, 'utf8')
     .then((data) => {
       const students = data
