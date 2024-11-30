@@ -7,10 +7,10 @@ describe("calculateNumber", () => {
     it("should add a rounded integer and a rounded float", () => {
         assert.strictEqual(calculateNumber(1, 3.7), 5);
     });
-    it("should add two rounded floats", () => {
-        assert.strictEqual(calculateNumber(1.2, 3.7), 5);
+    it("should add second rounded integer and a rounded float", () => {
+        assert.strictEqual(calculateNumber(1.2, 3), 4);
     });
     it("should add two rounded floats", () => {
-        assert.strictEqual(calculateNumber(1.5, 3.7), 6);
+        assert.strictEqual(calculateNumber(1.2, 3.7), 5);
     });
 });
