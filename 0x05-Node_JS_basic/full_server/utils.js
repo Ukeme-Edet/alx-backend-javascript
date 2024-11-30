@@ -1,4 +1,4 @@
-import fs from 'node:fs/promises';
+const fs = require('fs').promises;
 
 const readDatabase = async (path) => fs
   .readFile(path, 'utf-8')
