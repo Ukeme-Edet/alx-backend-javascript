@@ -3,4 +3,4 @@ class AppController {
     res.send('Hello Holberton School!');
   }
 }
-export default AppController;
+module.exports = AppController;
