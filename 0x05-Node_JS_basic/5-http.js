@@ -35,7 +35,7 @@ const app = http.createServer((req, res) => {
         res.end();
       })
       .catch(() => {
-        throw new Error('Cannot load the database');
+        res.end('Cannot load the database');
       });
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
