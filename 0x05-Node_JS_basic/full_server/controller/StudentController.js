@@ -1,10 +1,10 @@
-const { readDatabase } = require('../utils');
+import readDatabase from '../utils';
 
 class StudentsController {
   static async getAllStudents(req, res) {
-    res.write('This is the list of our students\n');
     readDatabase(process.argv[2])
       .then((students) => {
+        res.write('This is the list of our students\n');
         for (const [field, names] of Object.entries(students).sort(
           (a, b) => a[0].localeCompare(b[0]),
         )) {
@@ -17,7 +17,7 @@ class StudentsController {
         res.end();
       })
       .catch(() => {
-        res.end('Cannot load the database');
+        res.status(500).send('Cannot load the database');
       });
   }
 
@@ -34,4 +34,4 @@ class StudentsController {
       });
   }
 }
-module.exports = StudentsController;
+export default StudentsController;

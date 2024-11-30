@@ -1,4 +1,4 @@
-const fs = require('fs').promises;
+import { fs } from 'fs/promises';
 
 const readDatabase = async (path) => fs
   .readFile(path, 'utf-8')
@@ -20,4 +20,4 @@ const readDatabase = async (path) => fs
   .catch(() => {
     throw new Error('Cannot load the database');
   });
-module.exports = readDatabase;
+export default readDatabase;
